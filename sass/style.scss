@@ -8,6 +8,7 @@
 */
 
 @import 'normalize';
+@import 'variables';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
@@ -42,7 +43,26 @@ body {
 	width: 100%;
 }
 
+// test
 
+.blogContent {
+	width: 50%;
+	float: left;
+}
+
+figure {
+	height: 500px;
+	width: 50%;
+	float: left;
+	background-size: cover;
+	background-position: center;
+}
+
+.hero {
+	height: 100vh;
+	background-size: cover;
+	background-position: center center;
+}
 
 
 

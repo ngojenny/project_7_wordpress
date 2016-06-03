@@ -1,3 +1,26 @@
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 16px;
+}
+
+/*headings*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $headingFont;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+/*links*/
+
 a {
 	color: #BA209B;
 	text-decoration: none;
@@ -9,6 +32,9 @@ a {
 /* paragraphs */
 
 p {
+	font-family: $baseFont;
+	font-weight: 300;
+	font-style: italic;
 	line-height: 1.5;
 }
 

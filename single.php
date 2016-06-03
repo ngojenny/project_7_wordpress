@@ -7,17 +7,22 @@
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title"><?php the_title(); ?></h1>
+          
+          <?php// $image_alt = get_post_meta($image->id, 'the_post_thumbnail_alt', true); ?>
+          <img src="<?php the_post_thumbnail_url('large'); ?>" alt="">
 
-          <div class="entry-meta">
-            <?php hackeryou_posted_on(); ?>
-          </div><!-- .entry-meta -->
+          <!-- <div class="entry-meta">
+            <?php// hackeryou_posted_on(); ?>
+          </div> --><!-- .entry-meta -->
 
           <div class="entry-content">
-            <?php the_content(); ?>
-            <?php wp_link_pages(array(
-              'before' => '<div class="page-link"> Pages: ',
-              'after' => '</div>'
-            )); ?>
+            <div class="blog-content">
+              <?php the_content(); ?>
+              <?php wp_link_pages(array(
+                'before' => '<div class="page-link"> Pages: ',
+                'after' => '</div>'
+              )); ?>
+            </div>
           </div><!-- .entry-content -->
 
           <div class="entry-utility">
@@ -37,7 +42,12 @@
 
     </div> <!-- /.content -->
 
-    <?php get_sidebar(); ?>
+    <aside>
+      <p>By: <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a></p>
+      <p><?php the_date(); ?></p>
+      
+      <?php get_sidebar(); ?>
+    </aside>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

@@ -22,7 +22,8 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'footer' => 'Footer Menu'
 	) );
 
 	/*
@@ -43,9 +44,11 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function hackeryou_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
-
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300|Merriweather:400,300,300italic');
+	
+	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -175,6 +178,15 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name' => 'Footer Widget Area',
+		'id' => 'footer-widget-area',
+		'description' => 'The footer widget area',
+		'before_widget' => '<div class="address">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="standout">',
+		'after_title' => '</h4>'
+	) );
 }
 
 add_action( 'widgets_init', 'hackeryou_widgets_init' );
@@ -276,3 +288,6 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+//hide admin bar 
+add_filter('show_admin_bar', '__return_false');

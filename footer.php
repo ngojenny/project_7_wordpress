@@ -1,6 +1,14 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <!-- <p>&copy; HackerYou <//?php echo date('Y'); ?></p> -->
+	<?php wp_nav_menu( array(
+		'container' => 'nav',
+		'theme_location' => 'footer'
+	)) ?>
+
+    <div class="containerFlex">
+    	<?php dynamic_sidebar('footer-widget-area'); ?>
+    </div>
   </div>
 </footer>
 
@@ -12,7 +20,6 @@
  g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
  s.parentNode.insertBefore(g,s)}(document,"script"));
 </script>
-
 <?php wp_footer(); ?>
 </body>
 </html>
