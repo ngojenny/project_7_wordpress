@@ -47,7 +47,7 @@ function hackeryou_styles(){
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
 	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300|Merriweather:400,300,300italic');
-	
+
 	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
@@ -182,7 +182,17 @@ function hackeryou_widgets_init() {
 		'name' => 'Footer Widget Area',
 		'id' => 'footer-widget-area',
 		'description' => 'The footer widget area',
-		'before_widget' => '<div class="address">',
+		'before_widget' => '<div class="contact-info">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="standout">',
+		'after_title' => '</h4>'
+	) );
+
+	register_sidebar( array(
+		'name' => 'Company Location',
+		'id' => 'company-location',
+		'description' => 'Various Company Locations',
+		'before_widget' => '<div class="contact-info">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="standout">',
 		'after_title' => '</h4>'

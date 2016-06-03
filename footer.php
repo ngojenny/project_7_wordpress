@@ -1,15 +1,15 @@
 <footer>
-  <div class="container">
-    <!-- <p>&copy; HackerYou <//?php echo date('Y'); ?></p> -->
+	<div class="container">
+		<!-- <p>&copy; HackerYou <//?php echo date('Y'); ?></p> -->
 	<?php wp_nav_menu( array(
 		'container' => 'nav',
 		'theme_location' => 'footer'
 	)) ?>
 
-    <div class="containerFlex">
-    	<?php dynamic_sidebar('footer-widget-area'); ?>
-    </div>
-  </div>
+		<div class="containerFlex">
+			<?php dynamic_sidebar('footer-widget-area'); ?>
+		</div>
+	</div>
 </footer>
 
 <script>
