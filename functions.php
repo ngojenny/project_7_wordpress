@@ -13,7 +13,7 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('square', 150, 150, true);
-
+	add_image_size('custom', 300, 300);
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -62,7 +62,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -76,6 +76,11 @@ function hackeryou_scripts() {
     true //load in footer
   );
 
+  if (is_page('contact')) {
+         wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
+         wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+     }
+
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
@@ -83,6 +88,7 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
+  
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');
@@ -131,13 +137,18 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
 function hackeryou_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
+
+function kora_excerpt_length($koralength) {
+	return 150;
+}
+
+add_filter( 'excerpt_length', 'hackeryou_excerpt_length', 'kora_excerpt_length' );
 
 /*
  * Returns a "Continue Reading" link for excerpts
  */
 function hackeryou_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	return ' <a href="'. get_permalink() . '">Read More <span class="meta-nav">&rarr;</span></a>';
 }
 
 /**
@@ -192,7 +203,27 @@ function hackeryou_widgets_init() {
 		'name' => 'Company Location',
 		'id' => 'company-location',
 		'description' => 'Various Company Locations',
-		'before_widget' => '<div class="contact-info">',
+		'before_widget' => '<div class="company-loc">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="standout">',
+		'after_title' => '</h4>'
+	) );
+
+	register_sidebar( array(
+		'name' => 'List1',
+		'id' => 'list1',
+		'description' => 'Enter list1',
+		'before_widget' => '<div class="list list1">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="standout">',
+		'after_title' => '</h4>'
+	) );
+
+	register_sidebar( array(
+		'name' => 'List2',
+		'id' => 'list2',
+		'description' => 'Enter list2',
+		'before_widget' => '<div class="list list2">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="standout">',
 		'after_title' => '</h4>'

@@ -17,26 +17,28 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title">
-        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-          <?php the_title(); ?>
-        </a>
-      </h2>
-
+			<div class="blog-post-image">
+				<img src="<?php the_post_thumbnail_url('custom')?>" alt="">
+			</div>
 			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
+				<h2 class="entry-title">
+	        		<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+	          				<?php the_title(); ?>
+	        		</a>
+	      		</h2>
+				<p><?php $content = get_the_content();
+				echo wp_trim_words( $content, '100'); ?></p>
+				<a href="'. get_permalink() . '">Read More <span class="meta-nav">&rarr;</span></a>
+
 				<?php wp_link_pages( array(
-          'before' => '<div class="page-link"> Pages:',
-          'after' => '</div>'
-        )); ?>
+          			'before' => '<div class="page-link"> Pages:',
+          			'after' => '</div>'
+        		)); ?>
+
+				<p><?php the_tags('', ' ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
+        		<p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
+        		<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
 			</section><!-- .entry-content -->
-
-			<footer>
-				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-			</footer>
-
 		</article><!-- #post-## -->
 
 		<?php comments_template( '', true ); ?>

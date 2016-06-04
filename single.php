@@ -41,13 +41,15 @@
 			<?php endwhile; // end of the loop. ?>
 
 		</div> <!-- /.content -->
-
+		
 		<aside>
-			<p>By: <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a></p>
+			<h4>By: <?php the_author_link(); ?></p>
 			<p><?php the_date(); ?></p>
+			<h4>About the author<h4>
+			<p><?php the_author_meta('description'); ?></p>
 			<?php get_sidebar(); ?>
 		</aside>
-
+		
 	</div> <!-- /.container -->
 </div> <!-- /.main -->
 
