@@ -15,20 +15,30 @@
 	</div>
 </div>
 
-<div class="main">
+<div class="main about-main">
 	<div class="container">
 		<?php // Start the loop ?>
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			<div class="containerFlex">
 			<?php the_content(); ?>
 				<div class="skill-service-box service-box">
-					<?php dynamic_sidebar('list1'); ?>
-					<img src="<?php echo get_field('image_1')['url'] ?>" alt="<?php echo get_field('image_1')['alt'] ?>">
+					<div class="skill-service-box-content">
+						<?php dynamic_sidebar('list1'); ?>
+						<a href="<?php the_field('additional_link1') ?>">Contact Us</a>
+					</div>
+					<div class="skill-service-box-photo">
+						<img src="<?php echo get_field('image_1')['url'] ?>" alt="<?php echo get_field('image_1')['alt'] ?>">
+					</div>
 				</div>
 
 				<div class="skill-service-box skills-box">
-					<?php dynamic_sidebar('list2'); ?>
-					<img src="<?php echo get_field('image_2')['url'] ?>" alt="<?php echo get_field('image_1')['alt'] ?>">
+					<div class="skill-service-box-content">
+						<?php dynamic_sidebar('list2'); ?>
+						<a href="<?php the_field('additional_link1') ?>">Contact Us</a>
+					</div>
+					<div class="skill-service-box-photo">
+						<img src="<?php echo get_field('image_2')['url'] ?>" alt="<?php echo get_field('image_1')['alt'] ?>">
+					</div>
 				</div>
 			</div>
 

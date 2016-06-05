@@ -1,0 +1,61 @@
+/*ABOUT PAGE STYLINGS*/
+.about-main {
+	padding-bottom: 80px;
+}
+.skill-service-box {
+	display: flex;
+	margin-top: 70px;
+	.skill-service-box-photo,
+	.skill-service-box-content {
+		width: 50%;
+	}
+
+	.skill-service-box-content {
+		position: relative;
+	}
+	img {
+		max-width: 100%;
+	}
+	a {
+		position: absolute;
+		bottom: 20%;
+		left: 5px;
+	}
+}
+
+.skills-box a {
+	left: 35px;
+}
+
+.list {
+	.standout {
+		font-size: 3.5rem;
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 1.2rem;
+		color: $typeAccent;
+	}
+	ul {
+		list-style: none;
+	}
+	li {
+		font-family: $headingFont;
+		text-transform: uppercase;
+		font-size: 1.3rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+		line-height: 2;
+	}
+}
+.list1 {
+	margin-right: 30px;
+}
+
+.list2 {
+	margin-left: 30px;
+}
+
+.skills-box {
+	flex-direction: row-reverse;
+}
