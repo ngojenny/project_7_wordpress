@@ -2,9 +2,9 @@
 	<?php get_header(); ?>
 </div>
 
-<div class="main">
-	<div class="container">
-		<div class="content">
+<div class="main main-single">
+	<div class="container container-single">
+		<div class="content content-single">
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -17,8 +17,8 @@
 						<?php// hackeryou_posted_on(); ?>
 					</div> --><!-- .entry-meta -->
 
-					<div class="entry-content">
-						<div class="blog-content">
+					<div class="entry-content-single">
+						<div class="blog-content-single">
 							<?php the_content(); ?>
 							<?php wp_link_pages(array(
 								'before' => '<div class="page-link"> Pages: ',
@@ -45,9 +45,9 @@
 		</div> <!-- /.content -->
 		
 		<aside>
-			<h4>By: <?php the_author_link(); ?></p>
+			<p>By: <?php the_author_link(); ?></p>
 			<p><?php the_date(); ?></p>
-			<h4>About the author<h4>
+			<h4>About the author</h4>
 			<p><?php the_author_meta('description'); ?></p>
 			<?php get_sidebar(); ?>
 		</aside>

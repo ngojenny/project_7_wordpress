@@ -330,5 +330,13 @@ function get_post_parent($post) {
 	}
 }
 
+function custom_tag_cloud_widget($args) {
+	$args['largest'] = 1.4; //largest tag
+	$args['smallest'] = 1.2; //smallest tag
+	$args['unit'] = 'rem'; //tag font unit
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
+
 //hide admin bar 
 add_filter('show_admin_bar', '__return_false');

@@ -1,0 +1,185 @@
+.main-single .container-single {
+	padding-top: 100px;
+}
+
+.main-single .entry-title {
+	font-size: 3.7rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.container-single {
+	display: flex;
+	margin: 0;
+	padding-bottom: 80px;
+	width: 70%;
+	p {
+		color: $typeAccent;
+		line-height: 2;
+		font-size: 1.3rem;
+	}
+	aside {
+		width: calc(30% - 30px);
+		margin-left: 30px
+	}
+	.content-single {
+		width: calc(70% - 30px);
+		margin: 0;
+		margin-right: 30px;
+	}
+	strong {
+		color: $typeColor;
+		font-family: $headingFont;
+		font-style: normal;
+		text-transform: uppercase;
+	}
+
+	blockquote {
+		background-color: $accentBack;
+		width: 85%;
+		margin: 30px 0 30px 15%;
+		position:relative;
+		&::before {
+			content: "\201C";
+			position: absolute;
+			top: -45px;
+			left: -25px;
+			font-size: 14.5rem;
+			color: #B2D9DE;
+
+		}
+	}
+
+	.entry-utility {
+		margin: 20px 0;
+		font-family: $baseFont;
+		font-size: 1.2rem;
+		font-weight: 300;
+		color: $typeColor;
+		a {
+			text-decoration: none;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			color: $typeFade;
+		}
+	}
+	
+	.nav-previous {
+		margin-top: 45px;
+		a {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: $accentBack;
+		}
+	}
+	
+	textarea {
+		margin-bottom: 20px;
+	}
+
+	.form-submit .submit {
+		padding: 5px 10px;
+		background-color: $accentBack;
+		font-family: $baseFont;
+		font-size: 1.2rem;
+		font-weight: 300;
+		font-style: italic;
+		border: none;
+	}
+}
+
+aside {
+	margin-top: 80px;
+	p {
+		color: $typeAccent;
+		font-size: 1.2rem;
+		margin: 5px 0;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+
+	a:nth-of-type(1) {
+		color: $typeColor;
+		text-decoration: none;
+	}
+
+	h4,
+	.widget-title {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		margin-top: 20px;
+		margin-bottom: 14px;
+	}
+
+	input[type=search] {
+		width: 100%;
+		padding: 5px;
+		border: none;
+		border-bottom: 1px solid $accentBack;
+	}
+
+	input.searchsubmit {
+		padding: 5px 10px;
+		margin-top: 5px;
+		background-color: $accentBack;
+		border: none;
+		font-family: $baseFont;
+		font-size: 1.3rem;
+		font-weight: 300;
+		font-style: italic;
+	}
+	
+	.recent-posts-widget-with-thumbnails ul {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			width: 46%;
+			margin: 0;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	::-webkit-input-placeholder {
+	   font-family: $baseFont;
+	   font-weight: 300;
+	   font-size: 1.3rem;
+	   font-style: italic;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   font-family: $baseFont;
+	   font-weight: 300;
+	   font-size: 1.3rem;
+	   font-style: italic;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   font-family: $baseFont;
+	   font-weight: 300;
+	   font-size: 1.3rem;
+	   font-style: italic;
+	}
+
+	:-ms-input-placeholder {  
+	   font-family: $baseFont;
+	   font-weight: 300;
+	   font-size: 1.3rem;
+	   font-style: italic;
+	}
+
+	.tagcloud a[class^="tag"] {
+		display: inline-block;
+		padding: 5px 8px;
+		margin: 2px;
+		background-color: $accentBack;
+	}
+}
+
+.sidebar {
+	width: 100%;
+}
