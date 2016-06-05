@@ -16,32 +16,34 @@
 	</div>
 </div>
 
-<div class="main">
+<div class="main main-contact">
 	<?php // Start the loop ?>
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-	<div class="container">
+	
+	<div class="container main-container-contact">
 		<h2><?php the_title(); ?></h2>
-		<div class="containerFlex">
-			<?php dynamic_sidebar('company-location'); ?>
+		<div class="container-contact">
+			<div class="container-flex">
+				<?php dynamic_sidebar('company-location'); ?>
+			</div>
+			<?php the_content(); ?>
+				
+		</div> 
+		<div class="map">
+			<?php 
+			 
+			$location = get_field('map');
+			 
+			if( !empty($location) ):
+			?>
+			<div class="acf-map">
+				<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+			</div>
+			<?php endif; ?>
 		</div>
-		<?php the_content(); ?>
-			
-	</div> <!-- /.container -->
-	<div class="map">
-		<?php 
-		 
-		$location = get_field('map');
-		 
-		if( !empty($location) ):
-		?>
-		<div class="acf-map">
-			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-		</div>
-		<?php endif; ?>
-	</div>
 
-	<?php endwhile; // end the loop?>
+		<?php endwhile; // end the loop?>
+	</div> <!-- /.container -->
 </div> <!-- /.main -->
 
 <?php get_footer(); ?>
