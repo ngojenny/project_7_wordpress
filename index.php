@@ -1,5 +1,8 @@
 <?php //index.php is the last resort template, if no other templates match ?>
-<?php get_header(); ?>
+
+<div class="alt-nav">
+	<?php get_header(); ?>
+</div>
 	<?php 
 	   global $wp_query;
 	   $pageID = $wp_query->queried_object_id;
@@ -22,7 +25,7 @@
 </div>
 
 <div class="main">
-  <div class="container">
+  <div class="container container-blog">
 
 	<div class="content">
 		<?php get_template_part( 'loop', 'index' );	?>

@@ -1,5 +1,6 @@
 html {
 	font-size: 62.5%;
+	color: $typeColor;
 }
 
 body {
@@ -22,10 +23,17 @@ h1 {
 /*links*/
 
 a {
-	color: #BA209B;
-	text-decoration: none;
+	padding: 3px 0;
+	color: #000000;
+	font-family: $baseFont;
+	font-size: 1.2rem;
+	font-style: italic;
+	font-weight: 400;
+	text-decoration: underline;
+	text-transform: capitalize;
+	transition: color 0.3s;
 	&:hover {
-		color: #D424B1;
+		color: $typeFade;
 	}
 }
 
@@ -35,7 +43,8 @@ p {
 	font-family: $baseFont;
 	font-weight: 300;
 	font-style: italic;
-	line-height: 1.5;
+	font-size: 1.4rem;
+	line-height: 1.7;
 }
 
 /*blockquotes*/

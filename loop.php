@@ -18,7 +18,7 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="blog-post-image">
-				<img src="<?php the_post_thumbnail_url('custom')?>" alt="">
+				<img src="<?php the_post_thumbnail_url('large')?>" alt="">
 			</div>
 			<section class="entry-content">
 				<h2 class="entry-title">

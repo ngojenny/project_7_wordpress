@@ -46,7 +46,7 @@ of writing our own link tags in the header. */
 function hackeryou_styles(){
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
-	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300|Merriweather:400,300,300italic');
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,700|Merriweather:400,300,300italic');
 
 	wp_enqueue_style('style', get_stylesheet_uri() );
 }

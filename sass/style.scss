@@ -9,10 +9,13 @@
 
 @import 'normalize';
 @import 'variables';
+@import 'global';
 @import 'typography';
 @import 'navigation';
+@import 'header';
 @import 'sidebar';
 @import 'comments';
+@import '_blog-previews';
 @import 'footer';
 /*
 ====================================
@@ -41,27 +44,6 @@ body {
 
 .full {
 	width: 100%;
-}
-
-// test
-
-.blogContent {
-	width: 50%;
-	float: left;
-}
-
-figure {
-	height: 500px;
-	width: 50%;
-	float: left;
-	background-size: cover;
-	background-position: center;
-}
-
-.hero {
-	height: 100vh;
-	background-size: cover;
-	background-position: center center;
 }
 
 .acf-map {
