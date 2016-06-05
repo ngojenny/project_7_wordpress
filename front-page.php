@@ -36,7 +36,7 @@
 										echo wp_trim_words( $content, '30'); ?>
 									</p>
 								</div>
-								<a href="'. get_permalink() . '">Read More <span class="meta-nav">&rarr;</span></a>
+								<a href="<?php the_permalink(); ?>">Read More <span class="meta-nav">&rarr;</span></a>
 								<?php the_tags('', ' ') ?>
 							</div>
 						</div>

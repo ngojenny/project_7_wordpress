@@ -1,10 +1,12 @@
-<?php
+<div class="alt-nav">
+	<?php
 
-/*
-	Template Name: Contact, No Sidebar
-*/
+	/*
+		Template Name: Contact, No Sidebar
+	*/
 
-get_header();  ?>
+	get_header();  ?>
+</div>
 
 <div class="banner" style="background-image:url('<?php echo get_field('banner_image', $pageID)['url'] ?>')">
 	<div class="container">

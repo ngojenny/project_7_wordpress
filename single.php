@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<div class="alt-nav">
+	<?php get_header(); ?>
+</div>
 
 <div class="main">
 	<div class="container">

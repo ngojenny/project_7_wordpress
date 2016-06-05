@@ -68,7 +68,7 @@ figure {
 
 a[rel=tag] {
 	display: inline-block;
-	padding: 5px;
+	padding: 5px 10px;
 	background: $accentBack;
 	text-decoration: none;
 	margin: 10px 5px 5px 0;
@@ -84,6 +84,23 @@ a[rel=tag] {
 }
 
 /* BLOG PREVIEWS ON BLOG PAGE */
+
+// .container-blog article {
+// 	position:relative;
+// }
+
+// .organize-tags-cats + p::after {
+// 	content: "";
+// 	height: 1px;
+// 	width: 30%;
+// 	background-color: $typeColor;
+// 	position: absolute;
+// 	bottom: 15px;
+// 	left: 50%;
+// 	transform: translate(-50%, -50%);
+
+// }
+
 .banner {
 	padding: 50px 0;
 	// margin-top: 60px;
@@ -106,4 +123,52 @@ a[rel=tag] {
 	flex-direction: row;
 	text-align: center;
 	justify-content: center;
+}
+.entry-title {
+	margin-bottom: 0;
+}
+
+.date {
+	margin: 0;
+	margin-bottom: -10px;
+	color: $typeAccent;
+}
+
+.blog-title {
+	font-size: 1.8rem;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.categories,
+.expand-read {
+	color: $typeAccent;
+	font-weight: 400;
+}
+
+.expand-read {
+	margin-left: 5px;
+}
+
+.organize-tags-cats {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 5px;
+}
+
+.blog-post-image {
+	transition: opacity 0.3s;
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+//next and previous buttons
+.alignleft a,
+.alignright a {
+	display: inline-block;
+	background: $accentBack;
+	padding: 15px 30px;
+	margin: 10px 0;
 }

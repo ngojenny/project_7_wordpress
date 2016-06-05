@@ -16,32 +16,43 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<a class="expand-read" href="<?php the_permalink(); ?>">
 			<div class="blog-post-image">
 				<img src="<?php the_post_thumbnail_url('large')?>" alt="">
 			</div>
-			<section class="entry-content">
-				<h2 class="entry-title">
-	        		<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-	          				<?php the_title(); ?>
-	        		</a>
-	      		</h2>
-				<p><?php $content = get_the_content();
-				echo wp_trim_words( $content, '100'); ?></p>
-				<a href="'. get_permalink() . '">Read More <span class="meta-nav">&rarr;</span></a>
+		</a>
 
-				<?php wp_link_pages( array(
-          			'before' => '<div class="page-link"> Pages:',
-          			'after' => '</div>'
-        		)); ?>
+		<section class="entry-content">
+    		<a class="blog-title" href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+    			<h2 class="entry-title">
+      				<?php the_title(); ?>
+      			</h2>
+      			<p class="date"><?php the_time('F j, Y'); ?></p>
+    		</a>
+      		
+			<p>
+				<?php $content = get_the_content();
+				echo wp_trim_words( $content, '100'); ?>
+				<a class="expand-read" href="<?php the_permalink(); ?>">Read More <span class="meta-nav">&rarr;</span></a>
+			</p>
+			
 
-				<p><?php the_tags('', ' ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        		<p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        		<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-			</section><!-- .entry-content -->
-		</article><!-- #post-## -->
+			<?php wp_link_pages( array(
+      			'before' => '<div class="page-link"> Pages:',
+      			'after' => '</div>'
+    		)); ?>
+			
+			<div class="organize-tags-cats">
+				<p class="tags"><?php the_tags('', ' ', '<br>'); ?></p>
+				<p class="categories"> Posted in <?php the_category(', '); ?></p>
+			</div>
+    		<p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
+    		<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+		</section><!-- .entry-content -->
+	</article><!-- #post-## -->
 
-		<?php comments_template( '', true ); ?>
+	<?php comments_template( '', true ); ?>
 
 
 <?php endwhile; // End the loop. Whew. ?>
